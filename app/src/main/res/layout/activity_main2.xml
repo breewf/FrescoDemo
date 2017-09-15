@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="背景图使用示例："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="图一：加载网络图片带背景图；图二：只使用背景图不加载网络图片"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--
+                backgroundImage：背景图
+                fadeDuration：淡入淡出动画，直到图片被完全加载完毕这一过程都会受到该动画的影响-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_background1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:backgroundImage="@android:color/holo_orange_light"
+                    fresco:fadeDuration="4000" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_background2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:backgroundImage="@android:color/holo_orange_light"
+                    fresco:fadeDuration="4000" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="叠加图使用示例："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="图一：背景图使用上面的橘黄色，叠加图使用黑色，按压叠加图使用亮绿色。由于使用了叠加图，原头像图片不会显示出来；图二：点击使用按压叠加图变色"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--
+                backgroundImage：背景图
+                overlayImage：叠加图
+                pressedStateOverlayImage：按压状态显示叠加图-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_overlay1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:placeholderImage="@mipmap/img_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:backgroundImage="@android:color/holo_orange_light"
+                    fresco:pressedStateOverlayImage="@android:color/holo_green_dark"
+                    fresco:overlayImage="@android:color/black" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_overlay2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:placeholderImage="@mipmap/img_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:pressedStateOverlayImage="@color/holo_button_pressed" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

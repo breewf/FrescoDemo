@@ -1,0 +1,323 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="圆形图使用示例："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="一行代码搞定圆形图，设置roundAsCircle为true即可，Just So Easy!\n图一：本地图片；图二：网络获取图片"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--roundAsCircle：true为圆形图-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_circle1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundAsCircle="true"/>
+
+                <!--roundAsCircle：true为圆形图-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_circle2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/icon_placeholder"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarImage="@mipmap/icon_progress_bar"
+                    fresco:progressBarImageScaleType="centerInside"
+                    fresco:progressBarAutoRotateInterval="2000"
+                    fresco:failureImage="@mipmap/icon_failure"
+                    fresco:failureImageScaleType="centerInside"
+                    fresco:fadeDuration="2000"
+                    fresco:roundAsCircle="true"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="圆角图使用示例："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="圆角图：roundedCornerRadius\n图一：本地图片使用圆角图；图二：网络图片使用圆角图"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--roundedCornerRadius：圆角图
+                roundTopLeft：左上，true为圆角，false：非圆角
+                其它同理，当四个值都为true时，可省略不写-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_round1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundTopLeft="true"
+                    fresco:roundTopRight="true"
+                    fresco:roundBottomLeft="true"
+                    fresco:roundBottomRight="true"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_round2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/icon_placeholder"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarImage="@mipmap/icon_progress_bar"
+                    fresco:progressBarImageScaleType="centerInside"
+                    fresco:progressBarAutoRotateInterval="2000"
+                    fresco:failureImage="@mipmap/icon_failure"
+                    fresco:failureImageScaleType="centerInside"
+                    fresco:fadeDuration="2000"
+                    fresco:roundedCornerRadius="30dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="圆角图四个角各为非圆角示例，控制其值为true或false即可"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--roundedCornerRadius：圆角图
+                roundTopLeft：左上，true为圆角，false：非圆角
+                其它同理，当四个值都为true时，可省略不写-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundTopLeft="false"
+                    fresco:roundTopRight="true"
+                    fresco:roundBottomLeft="true"
+                    fresco:roundBottomRight="true"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundTopLeft="true"
+                    fresco:roundTopRight="false"
+                    fresco:roundBottomLeft="true"
+                    fresco:roundBottomRight="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--roundedCornerRadius：圆角图
+                roundTopLeft：左上，true为圆角，false：非圆角
+                其它同理，当四个值都为true时，可省略不写-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundTopLeft="true"
+                    fresco:roundTopRight="true"
+                    fresco:roundBottomLeft="false"
+                    fresco:roundBottomRight="true"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundTopLeft="true"
+                    fresco:roundTopRight="true"
+                    fresco:roundBottomLeft="true"
+                    fresco:roundBottomRight="false"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/colorAccent"
+                android:text="注：当同时设置图像的圆形图和圆角图时，图像会以圆形的方式显示"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!-- 同时设置圆形和圆角，会以圆形的方式显示-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundAsCircle="true"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundTopLeft="false"
+                    fresco:roundTopRight="true"
+                    fresco:roundBottomLeft="true"
+                    fresco:roundBottomRight="true"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/colorAccent"
+                android:text="圆形圆角边框宽度及颜色：roundingBorderWidth及roundingBorderColor"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!-- roundingBorderWidth：边框宽度
+                roundingBorderColor：边框颜色-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundAsCircle="true"
+                    fresco:roundingBorderWidth="6dp"
+                    fresco:roundingBorderColor="@color/black"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundingBorderWidth="6dp"
+                    fresco:roundingBorderColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:background="@color/black"
+                android:padding="10dp">
+
+                <!-- roundingBorderWidth：边框宽度
+                roundingBorderColor：边框颜色-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundAsCircle="true"
+                    fresco:roundingBorderWidth="4dp"
+                    fresco:roundingBorderColor="@color/white"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerInParent="true"
+                    fresco:placeholderImage="@mipmap/cat_touxiang"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:roundedCornerRadius="30dp"
+                    fresco:roundingBorderWidth="4dp"
+                    fresco:roundingBorderColor="@color/white"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

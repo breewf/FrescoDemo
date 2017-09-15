@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_click_me"
+        app:showAsAction="always"
+        android:title="点我-->>" />
+
+    <item
+        android:id="@+id/action_1"
+        app:showAsAction="never"
+        android:title="加载中及加载失败" />
+
+    <item
+        android:id="@+id/action_2"
+        app:showAsAction="never"
+        android:title="背景图及叠加图" />
+
+    <item
+        android:id="@+id/action_3"
+        app:showAsAction="never"
+        android:title="圆形图及圆角图" />
+
+    <item
+        android:id="@+id/action_4"
+        app:showAsAction="never"
+        android:title="加载进度条显示" />
+
+    <item
+        android:id="@+id/action_5"
+        app:showAsAction="never"
+        android:title="渐进式JPEG图" />
+    <item
+        android:id="@+id/action_6"
+        app:showAsAction="never"
+        android:title="动画图GIF和WebP" />
+
+    <item
+        android:id="@+id/action_7"
+        app:showAsAction="never"
+        android:title="改变大小和旋转" />
+
+</menu>

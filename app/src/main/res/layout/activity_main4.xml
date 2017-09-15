@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="进度条使用示例："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="要显示进度，最简单的办法就是在 构建 hierarchy 时使用 ProgressBarDrawable，这样，在 Drawee 的底部就会有一个深蓝色的矩形进度条\n点击下面的默认loading图片以加载网络图片"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_progress_bar1"
+                    android:layout_width="360dp"
+                    android:layout_height="240dp"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    fresco:actualImageScaleType="centerCrop"
+                    fresco:fadeDuration="2000"
+                    fresco:placeholderImage="@mipmap/loading_default_360x240"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarAutoRotateInterval="2000"
+                    fresco:progressBarImage="@mipmap/icon_progress_bar"
+                    fresco:progressBarImageScaleType="centerInside" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:text="自定义进度条，如果想精确显示加载进度，需要重写 Drawable.onLevelChange\n点击下面的默认loading图片以加载网络图片"
+                    android:textSize="16sp" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_progress_bar2"
+                    android:layout_width="360dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    fresco:actualImageScaleType="centerCrop"
+                    fresco:fadeDuration="2000"
+                    fresco:failureImage="@mipmap/loading_error_360x240"
+                    fresco:failureImageScaleType="fitCenter"
+                    fresco:placeholderImage="@mipmap/loading_default_360x240"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarAutoRotateInterval="5000"
+                    fresco:progressBarImage="@mipmap/icon_progress_bar"
+                    fresco:progressBarImageScaleType="centerInside" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="加载中及加载失败使用示例："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="加载中使用progressBarImage属性可定义一个加载中的图片以及使用progressBarAutoRotateInterval属性来让加载中图片旋转\n加载失败使用一个错误的url\n本例同时使用了淡入淡出动画"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <!--
+                actualImageScaleType：实际图片的缩放类型
+                progressBarImage：加载中图片
+                progressBarImageScaleType：加载中图片缩放类型
+                progressBarAutoRotateInterval：加载中图片自动旋转间隔时间，直到图片加载完成为止
+                fadeDuration：淡入淡出动画，直到图片被完全加载完毕这一过程都会受到该动画的影响-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_loading"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:placeholderImage="@mipmap/loading_default_160x240"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarAutoRotateInterval="2000"
+                    fresco:progressBarImage="@mipmap/icon_progress_bar"
+                    fresco:progressBarImageScaleType="centerInside"
+                    fresco:fadeDuration="2000"/>
+
+                <!--
+                failureImage：加载失败的图片
+                failureImageScaleType：加载失败图片的缩放类型-->
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_loading_error"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    fresco:actualImageScaleType="focusCrop"
+                    fresco:failureImage="@mipmap/loading_error_160x240"
+                    fresco:failureImageScaleType="fitCenter"
+                    fresco:placeholderImage="@mipmap/loading_default_160x240"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarAutoRotateInterval="5000"
+                    fresco:progressBarImage="@mipmap/icon_progress_bar"
+                    fresco:progressBarImageScaleType="centerInside"
+                    fresco:fadeDuration="2000"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="加载失败点击重试："
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="加载失败点击重试，重复加载4次还是没有加载出来的时候才会显示 failureImage(失败图) 的图片"
+                android:textSize="16sp" />
+
+            <!--
+            retryImage：重试图片
+            retryImageScaleType：重试图片缩放类型-->
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_retry"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:failureImage="@mipmap/icon_failure"
+                fresco:failureImageScaleType="centerInside"
+                fresco:placeholderImage="@mipmap/icon_placeholder"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:progressBarAutoRotateInterval="5000"
+                fresco:progressBarImage="@mipmap/icon_progress_bar"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImage="@mipmap/icon_retry"
+                fresco:retryImageScaleType="centerCrop" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
